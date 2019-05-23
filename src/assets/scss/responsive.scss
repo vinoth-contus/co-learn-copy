@@ -1,0 +1,120 @@
+@import 'common.scss';
+
+@media (max-width: 1199px) {
+}
+
+@media (max-width: 991px) {
+}
+@media (max-width: 1024px) {
+  .overall-wrap.question-pge {
+    padding-bottom: 460px;
+    .questions-option-section {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+  #max-width-halfthird {
+    .container-wrap {
+      max-width: 50%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  html {
+    font-size: 14px;
+  }
+  .container-wrap,
+  .mobile-footer,
+  #max-width-halfthird .container-wrap {
+    max-width: 100%;
+  }
+  .correct-answers-wrap {
+    padding: 40px 20px 60px 20px;
+  }
+  .header-section {
+    padding-top: 15px;
+  }
+  .body-section.practice-end,
+  .body-section {
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  .practice-end .practice-cotent {
+    margin-top: 20px;
+  }
+  .page-bot-btn {
+    margin-top: 30px;
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
+  .focusing-content .reading-list {
+    @include flexbox();
+    width: 100%;
+  }
+  .overall-wrap.practice-page {
+    padding-bottom: 90px;
+  }
+  .overall-wrap {
+    padding-bottom: 80px;
+  }
+  .overall-wrap.practice-page.question-pge {
+    padding-bottom: 460px;
+    .questions-option-section {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+  //practice start
+  .overall-wrap.practice-page {
+    padding: 0 20px 90px 20px;
+  }
+  //Practice-end
+  .overall-wrap.practice-page.end {
+    padding: 0 20px 160px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 13px;
+  }
+  //Questions page
+  .question-components {
+    .page-title {
+      padding-left: 20px;
+    }
+    .quest-tag {
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  .ovarlay {
+    overflow: auto;
+  }
+}
+
+@media screen and (min-width: 560px) and (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+  .start-end-page.end-page,
+  .start-end-page {
+    .top-section {
+      height: auto;
+    }
+    .bottom-section {
+      width: 100%;
+      height: auto;
+      position: initial;
+      padding-bottom: 30px;
+      .bottom-line {
+        display: none;
+      }
+    }
+  }
+}

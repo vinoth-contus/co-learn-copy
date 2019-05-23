@@ -1,0 +1,19 @@
+@import '../../assets/scss/mixin.scss';
+@import '../../assets/scss/variable.scss';
+
+.overall-wrap.reading-list-reviewed {
+  // overflow: hidden;
+  max-height: 100vh;
+  .learnitem-header {
+    padding: 15px 25px 15px 5px;
+    .back-button {
+      height: 100%;
+      width: fit-content;
+      padding: 15px;
+      cursor: pointer;
+    }
+  }
+  .iframe {
+    height: calc(100vh - 82px);
+  }
+}

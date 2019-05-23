@@ -1,0 +1,379 @@
+@import '../assets/scss/mixin.scss';
+@import '../assets/scss/variable.scss';
+
+#profile {
+  .CircularProgressbar .CircularProgressbar-path {
+    transition: stroke-dashoffset 0.5s ease 0s;
+    stroke-linecap: square;
+    stroke: #3cc3ff;
+  }
+  nav li ul.profile-dropper {
+    display: none;
+  }
+  .CircularProgressbar .CircularProgressbar-trail {
+    stroke: #e2e7ee;
+  }
+  padding-bottom: 0;
+  .reading-list-content {
+    padding-bottom: 0;
+  }
+  .profiler-progress-circle {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    text-align: center;
+    position: relative;
+    svg {
+      width: 100%;
+      height: 100%;
+      path.profilerprogress-path {
+        stroke: #e2e7ee;
+      }
+      path.profilerprogress-trail {
+        stroke: #3cc3ff;
+      }
+    }
+    .profiler-avatar {
+      position: absolute;
+      width: 70px;
+      height: 70px;
+      @include border-radius(50%);
+      top: -5px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      background-color: transparent;
+      overflow: hidden;
+      text-align: center;
+      img {
+        height: 100%;
+      }
+    }
+  }
+  .skill-set {
+    * {
+      color: #6a7887;
+    }
+    padding: 33px 0 45px;
+    .white-bg {
+      background-color: #fff;
+      @include border-radius(6px);
+      padding: 40px;
+      @include box-shadow(0px 32px 17px -20px rgba(0, 0, 0, 0.3));
+      margin-bottom: 25px;
+      .profiler-wrap {
+        @include flexbox();
+        @include justify-content(space-between);
+        @include flex-wrap(wrap);
+        .profiler-details {
+          display: table;
+          .profiler-progress {
+            min-width: 100px;
+            height: 100px;
+            width: 100px;
+          }
+          .profiler-avatar-details {
+            display: table-cell;
+            vertical-align: middle;
+            padding-left: 17px;
+            h2 {
+              font-size: rem(34);
+              color: #000;
+              font-family: 'Opensans-SemiBold';
+              span {
+                font-size: rem(17);
+                margin-left: 10px;
+                font-family: 'Opensans-Regular';
+              }
+            }
+            .avatar-points {
+              padding: 6px 10px;
+              background-color: $primary-btn-color;
+              font-size: rem(15);
+              @include border-radius(4px);
+              letter-spacing: 0.5px;
+              color: #fff;
+              font-family: 'Opensans-SemiBold';
+            }
+          }
+        }
+        .profiler-points-rewards {
+          @include flexbox();
+          @include justify-content(space-evenly);
+          @include align-items(center);
+          .profiler-rewarded {
+            padding-right: 20px;
+            @include flexbox();
+            @include flex-direction(column);
+            @include justify-content(center);
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            h2 {
+              color: #000;
+              font-size: rem(27);
+              font-family: 'Opensans-Bold';
+              margin-bottom: 10px;
+            }
+            p {
+              width: 60%;
+            }
+          }
+        }
+      }
+      &.profiler-area {
+        position: relative;
+        .editer {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          cursor: pointer;
+        }
+      }
+    }
+    .required-skill {
+      h2{
+        margin-bottom: 55px;
+      }
+      .white-bg-label-head {
+        margin-bottom: 25px;
+        font-size: rem(16);
+      }
+      .progress-bar-wrap,
+      .progress-item,
+      h2,
+      .progress-item,
+      .progress-head {
+        @include flexbox();
+      }
+      .progress-bar-wrap {
+        @include flex-wrap(wrap);
+        margin: 0 -40px;
+        .progress-head {
+          @include justify-content(space-between);
+          margin: 12px 0;
+          h2 {
+            @include align-items(center);
+            @include flexbox();
+            &.orange-h2 {
+              color: #feba74;
+              span {
+                color: #feba74;
+              }
+              svg {
+                path {
+                  fill: #feba74;
+                }
+              }
+            }
+            &.blue-h2 {
+              color: #4a90e2;
+              span {
+                color: #4a90e2;
+              }
+              svg {
+                path {
+                  fill: #4a90e2;
+                }
+              }
+            }
+            &.hide-h2 {
+              opacity: 0;
+              visibility: hidden;
+            }
+          }
+        }
+      }
+      .progress-item {
+        width: 100%;
+        margin-bottom: 40px;
+        @include flex-direction(column);
+        flex: 0 0 33.33%;
+        padding: 0 40px 0px;
+        h3 {
+          font-size: rem(17);
+          color: #000;
+        }
+        h2 {
+          font-size: rem(14);
+          text-transform: uppercase;
+          font-family: 'Opensans-Bold';
+          span {
+            padding-left: 5px;
+            font-family: 'Opensans-Bold';
+          }
+          svg {
+            margin-left: 8px;
+          }
+        }
+        &:last-child {
+          padding-bottom: 0;
+        }
+        // &:first-child,
+        // &:nth-child(2),
+        // &:nth-child(3) {
+        //   margin-top: 0;
+        // }
+      }
+      .progress-bar-outer-wrap {
+        @include flexbox();
+        width: 100%;
+        @include align-items(center);
+        .progress-bar-outer {
+          width: 100%;
+          height: 10px;
+          @include flexbox();
+          @include justify-content(space-between);
+          @include border-radius(5px);
+          position: relative;
+          background-color: #e2e7ee;
+          .progress-bar-inner {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            @include border-radius(5px);
+            top: 0;
+            left: 0;
+            background-color: #fd5089;
+          }
+        }
+        img {
+          @include transform(rotate(-180deg));
+          margin-left: 20px;
+          display: none;
+        }
+      }
+    }
+  }
+  .logout-profiler {
+    color: #fff;
+    font-size: rem(17);
+    vertical-align: middle;
+    margin-top: 30px;
+    img {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 11px;
+      height: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  #profile {
+    .skill-set {
+      .white-bg {
+        .profiler-wrap {
+          .profiler-points-rewards {
+            flex: 0 0 100%;
+            margin: 30px 0 0 0;
+            .profiler-rewarded {
+              -webkit-box-flex: 0;
+              -ms-flex: 0 0 33.33%;
+              flex: 0 0 33.33%;
+              h2,
+              p {
+                text-align: center;
+                width: 100%;
+              }
+              &:last-child {
+                margin-right: 0;
+              }
+            }
+          }
+        }
+      }
+      .required-skill {
+        .progress-bar-wrap {
+          .progress-item {
+            flex: 0 0 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #profile {
+    .reading-hedaing {
+      span {
+        display: block;
+      }
+    }
+    .skill-set {
+      .white-bg {
+        margin-bottom: 16px;
+        padding: 19px 17px;
+        .white-bg-label-head {
+          margin-bottom: 30px;
+          font-size: rem(16);
+        }
+        .profiler-wrap {
+          .profiler-details {
+            width: 100%;
+            display: block;
+            text-align: center;
+            .profiler-progress {
+              margin: auto;
+            }
+            .profiler-avatar-details {
+              width: 100%;
+              display: block;
+              h2 {
+                margin-bottom: 16px;
+                font-size: rem(22);
+                span {
+                  display: block;
+                }
+              }
+              .avatar-points {
+                display: inline-block;
+                margin-bottom: 30px;
+              }
+            }
+            border-bottom: 1px solid #d8d8d8;
+          }
+        }
+        &:first-child {
+          padding: 35px 16px 25px 16px;
+        }
+      }
+      .required-skill {
+        overflow: hidden;
+        h2{
+          margin-bottom: 15px;
+        }
+        .progress-bar-wrap {
+          .progress-item {
+            flex: 0 0 100%;
+            border-bottom: 1px solid #e1e4e7;
+            padding-bottom: 20px;
+            margin-bottom: 10px;
+            h3 {
+              color: #000;
+            }
+            &:last-child {
+              border-bottom: 0;
+              padding-bottom: 0;
+            }
+          }
+        }
+        .progress-bar-outer-wrap {
+          img {
+            display: block;
+            width: 10px;
+            height: 13px;
+          }
+        }
+      }
+    }
+    .logout-profiler {
+      margin-top: 100px;
+    }
+    .nav-links.logout-web {
+      display: none !important;
+    }
+  }
+}

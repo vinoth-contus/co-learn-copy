@@ -1,0 +1,164 @@
+@import '../../assets/scss/mixin.scss';
+@import '../../assets/scss/variable.scss';
+
+.overall-wrap.profile-edit {
+  .edit-profile-title {
+    @include flexbox();
+    @include justify-content(center);
+    @include align-items(center);
+    position: relative;
+    padding: 20px 0;
+    border-bottom: 1px solid #dde1e9;
+    > a {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      @include transform(translateY(-50%));
+    }
+    h2 {
+      font-size: rem(18);
+    }
+  }
+  .edit-profile {
+    padding: 60px 0;
+    .user-profile {
+      width: 74px;
+      height: 74px;
+      background-color: silver;
+      margin: 0 auto;
+      position: relative;
+      &:before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.46);
+      }
+      .camera-function {
+        width: 24px;
+        height: 24px;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        margin: auto;
+        background: transparent url(../../assets/images/svg/camera.svg)
+          no-repeat center;
+        background-size: cover;
+        position: absolute;
+        z-index: 9;
+      }
+    }
+    .profile-edit-fields {
+      .personal-edits {
+        @include flexbox();
+        @include flex-direction(column);
+        border-bottom: 1px solid #dde1e9;
+        margin-top: 32px;
+        .profile-edit-title {
+          padding-bottom: 10px;
+          border-bottom: 1px solid #dde1e9;
+          font-family: 'OpenSans-Regular';
+        }
+        .profile-details-form {
+          margin: 10px 0;
+          @include flexbox();
+          @include align-items(center);
+          .profile-editer-details,
+          .profile-editor-replied {
+            @include flexbox();
+            flex: 0 0 50%;
+            @include align-items(center);
+          }
+          .profile-editer-details {
+            color: #53617b;
+            font-family: 'OpenSans-Bold';
+            font-size: rem(18);
+          }
+          .profile-editor-replied,
+          input {
+            font-size: rem(17);
+            color: #53617b;
+            font-family: 'OpenSans-Regular';
+            border-bottom: 0;
+            #profile-edit-dob {
+              width: 100%;
+            }
+          }
+          &.email {
+            input {
+              color: rgba(83, 97, 123, 0.4);
+            }
+          }
+        }
+        &.change-password {
+          border: 0;
+          h2 {
+            @include flexbox();
+            @include justify-content(space-between);
+            @include align-items(center);
+            width: 100%;
+            > a {
+              color: #53617b;
+              font-family: 'OpenSans-Bold';
+              font-size: rem(18);
+            }
+            img {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .date-picker-edit {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .overall-wrap.profile-edit {
+    .edit-profile {
+      padding: 32px 0 60px 0;
+      .profile-edit-fields {
+        .personal-edits {
+          padding: 0;
+          .profile-edit-title {
+            padding: 10px 0 10px 15px;
+          }
+          .profile-details-form {
+            border-bottom: 1px solid #dde1e9;
+            margin: 0 0 0 15px;
+            padding: 10px 15px 10px 0;
+            &:last-child {
+              border-bottom: 0;
+            }
+            .profile-editor-replied {
+              select {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+              }
+            }
+          }
+          &.change-password {
+            border: 1px solid #dde1e9;
+            border-left: 0;
+            border-right: 0;
+            h2 {
+              img {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+    .date-picker-edit {
+      display: block;
+      @include transform(rotate(180deg));
+      height: 13px;
+      width: 8px;
+    }
+  }
+}

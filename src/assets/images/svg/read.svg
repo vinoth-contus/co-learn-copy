@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="107px" height="81px" viewBox="0 0 107 81" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 53.1 (72631) - https://sketchapp.com -->
+    <title>1A021E0B-A209-447C-B022-F4AFB9286023</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="107" height="81" rx="6"></rect>
+    </defs>
+    <g id="Assets" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-566.000000, -730.000000)" id="img_cta_read">
+            <g transform="translate(566.000000, 730.000000)">
+                <g id="Group-4">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#FFFFFF" fill-rule="nonzero" xlink:href="#path-1"></use>
+                    <circle id="Oval" fill="#FEBA74" fill-rule="nonzero" opacity="0.5" mask="url(#mask-2)" cx="-4" cy="64" r="58"></circle>
+                    <circle id="Oval-Copy-3" fill="#FEBA74" fill-rule="nonzero" opacity="0.5" mask="url(#mask-2)" cx="17" cy="8" r="58"></circle>
+                    <circle id="Oval-Copy-2" fill="#FEBA74" fill-rule="nonzero" opacity="0.5" mask="url(#mask-2)" cx="38" cy="81" r="58"></circle>
+                </g>
+                <g id="Group-Copy-2" transform="translate(17.000000, 17.000000)">
+                    <circle id="Oval" stroke="#FFFFFF" stroke-width="3" fill="#FEBA74" fill-rule="nonzero" cx="23.5" cy="23.5" r="25"></circle>
+                    <path d="M27.9640277,15.5778789 C26.6263686,14.8229382 25.0976034,14.4090909 23.5,14.4090909 C18.4792295,14.4090909 14.4090909,18.4792295 14.4090909,23.5 C14.4090909,28.5207705 18.4792295,32.5909091 23.5,32.5909091 C28.5207705,32.5909091 32.5909091,28.5207705 32.5909091,23.5 C32.5909091,22.5586055 33.3540601,21.7954545 34.2954545,21.7954545 C35.236849,21.7954545 36,22.5586055 36,23.5 C36,30.4035594 30.4035594,36 23.5,36 C16.5964406,36 11,30.4035594 11,23.5 C11,16.5964406 16.5964406,11 23.5,11 C26.0212442,11 28.4213053,11.7519689 30.4403233,13.1015834 L32.3737991,11.1681075 C32.6055053,10.9364013 32.990097,10.9453231 33.2328087,11.1880348 C33.3456539,11.30088 33.4127348,11.4508411 33.4201549,11.606852 L33.7262224,18.0420787 C33.7501614,18.54541 33.3619988,18.9539267 32.8592368,18.9545265 C32.8444369,18.9545442 32.829622,18.9542005 32.8148053,18.9534958 L26.3795785,18.6474283 C26.0440244,18.631469 25.7723281,18.3468186 25.772728,18.011644 C25.7729139,17.8558095 25.8331057,17.7088009 25.9408341,17.6010725 L27.9640277,15.5778789 L27.9640277,15.5778789 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

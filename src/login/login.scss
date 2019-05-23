@@ -1,0 +1,123 @@
+@import '../assets/scss/mixin.scss';
+@import '../assets/scss/variable.scss';
+
+.loginbg {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  @include flexbox();
+  @include justify-content(Center);
+  .bg-wrap {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #667898 url(../assets/images/login-bg.png) no-repeat fixed;
+    background-size: cover;
+  }
+  .login-btn {
+    width: 100%;
+    height: 54px;
+    margin-top: 24px;
+    font-size: rem(17);
+    background-color: $primary-btn-color;
+    color: #fff;
+    @include border-radius(6px);
+  }
+  .login-content-wrap {
+    text-align: center;
+    width: 100%;
+    height: auto;
+    position: relative;
+    max-width: 323px;
+    padding: 30px 20px;
+    margin: auto;
+    h1 {
+      margin-bottom: 60px;
+      img {
+        margin: auto;
+      }
+    }
+  }
+  .login-credential-wrap {
+    width: 100%;
+    margin: auto;
+    padding: 0;
+    margin: 10px auto;
+    max-width: 323px;
+    height: auto;
+  }
+  form {
+    .input-wrap {
+      background-color: #fff;
+      height: auto;
+      @include border-radius(6px);
+      width: 100%;
+    }
+    padding: 0;
+    .input-field {
+      position: relative;
+      @include flexbox();
+      @include flex-direction(column);
+      padding: 20px 15px 15px 15px;
+      border-bottom: 1px solid #e3e3e3;
+      height: auto;
+      .credential-field {
+        @include flexbox();
+        @include flex-direction(column);
+        position: relative;
+        label {
+          margin-bottom: 6px;
+          position: absolute;
+          color: #6a7887;
+          top: 56%;
+          transition: 0.3s all ease;
+          font-size: rem(18);
+          left: 0;
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+        }
+        input {
+          position: relative;
+          z-index: 1;
+          width: 100%;
+          color: #000;
+          background: none;
+          height: 35px;
+          font-size: rem(18);
+          margin-top: 6px;
+          font-family: 'OpenSans-SemiBold';
+          letter-spacing: 0.5px;
+        }
+        input:focus ~ label,
+        .move-label-to-top {
+          top: 0%;
+          font-size: rem(16);
+        }
+      }
+
+      .login-toaster {
+        @include flexbox();
+        @include align-items(center);
+        color: #fd5089;
+        font-size: rem(15);
+        img {
+          height: 13px;
+          margin-right: 10px;
+        }
+      }
+    }
+    input {
+      font-size: rem(16);
+      border-bottom: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .loginbg {
+    .bg-wrap {
+      background: #667898 url(../assets/images/login-mob.png) no-repeat left
+        center;
+    }
+  }
+}

@@ -1,0 +1,305 @@
+@import '../assets/scss/mixin.scss';
+@import '../assets/scss/variable.scss';
+
+.create-account {
+  .body-section {
+    .container-wrap {
+      max-width: 450px;
+      .create-acc {
+        .signup-heading {
+          border-bottom: 1px solid rgba(106, 120, 135, 0.2);
+          padding: 15px 0;
+          margin-bottom: 10px;
+          p {
+            font-size: rem(15);
+            line-height: rem(22);
+            font-family: OpenSans-Regular;
+          }
+          h2 {
+            font-size: rem(30);
+            line-height: rem(38);
+            font-family: OpenSans-SemiBold;
+            color: #4a4a4a;
+            margin-top: 6px;
+          }
+        }
+        section {
+          form {
+            input.error {
+              color: $error-alert;
+            }
+          }
+          &.hide {
+            display: none;
+          }
+        }
+        .step-1 {
+          form {
+            label {
+              margin: 15px 0;
+              display: inline-block;
+              font-size: rem(16);
+            }
+            input {
+              width: 100%;
+              background: #eff2f6;
+              border: 1px solid #cad2db;
+              border-radius: 6px;
+              padding: 10px;
+              font-size: rem(20);
+              color: #1d2c3d;
+              text-transform: uppercase;
+              &:focus {
+                background: #fff;
+              }
+              &.input-disabled {
+                cursor: not-allowed;
+                color: #bfbfbf;
+              }
+            }
+            .signup-toaster {
+              margin: 14px 0;
+            }
+            .bg-white {
+              background-color: #fff;
+            }
+            .description {
+              display: inline-block;
+              font-size: rem(14px);
+              color: #6a7887;
+              margin: 22px 0;
+            }
+          }
+          .existing-account {
+            font-size: rem(16);
+            font-family: OpenSans-Regular;
+            text-align: center;
+            margin-top: 40px;
+            a {
+              color: $primary-btn-color;
+              font-family: OpenSans-Bold;
+            }
+          }
+        }
+        .step-2 {
+          p {
+            font-size: rem(17);
+            line-height: rem(28);
+            color: #6a7887;
+            margin: 15px 0;
+          }
+          .company-details {
+            padding: 15px 30px 30px 25px;
+            background: #f6f8fa;
+            border: 1px solid #d5dde6;
+            margin: 5px 0;
+            border-radius: 4px;
+            label {
+              font-size: rem(16);
+              color: #6a7887;
+              margin-top: 15px;
+              display: inline-block;
+            }
+            p {
+              font-size: rem(18);
+              color: #4a4a4a;
+              font-family: OpenSans-Bold;
+              margin: 5px 0 0;
+            }
+            #contact-details {
+              @include flexbox();
+              @include align-items(center);
+              img {
+                width: 35px;
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+        .step-3 {
+          & > p {
+            font-size: rem(18);
+            line-height: rem(28);
+          }
+          .signup-details {
+            margin: 25px 0;
+            .input-wrap {
+              margin-bottom: 40px;
+              .input-field {
+                position: relative;
+                margin: 10px 0 0;
+                border-bottom: 1px solid #e3e3e3;
+                input {
+                  width: 100%;
+                  padding: 20px 0 15px;
+                  font-size: 16px;
+                  color: #000;
+                  border-bottom: 0;
+                  &:focus ~ label,
+                  &.focus ~ label {
+                    top: 0;
+                    font-size: rem(15);
+                  }
+                }
+                #username {
+                  width: 65%;
+                }
+                label {
+                  position: absolute;
+                  top: 18px;
+                  left: 0;
+                  transition: 0.3s all ease;
+                  font-size: rem(18);
+                }
+                .availability {
+                  font-size: rem(14);
+                  position: absolute;
+                  right: 0;
+                  top: 15px;
+                  background: #fff;
+                  padding: 10px;
+                  span {
+                    @include flexbox();
+                    @include align-items(center);
+                    @include justify-content(flex-end);
+                    img {
+                      width: 15px;
+                      margin-left: 5px;
+                    }
+                  }
+                  .avail {
+                    color: $primary-btn-color;
+                  }
+                  .not-avail {
+                    color: $error-alert;
+                  }
+                }
+                .signup-toaster {
+                  margin-bottom: 10px;
+                }
+              }
+            }
+          }
+        }
+        .step-4 {
+          .skills-wrap {
+            margin: 40px 0;
+            .skill-item {
+              display: inline-block;
+              margin: 5px 0;
+              input {
+                &:checked {
+                  & ~ label {
+                    color: #007ab0;
+                    background: #cbeefd;
+                    border: 1px solid #3dc3ff;
+                    &::before {
+                      border: 1px solid #3dc3ff;
+                    }
+                    &::after {
+                      opacity: 1;
+                    }
+                  }
+                }
+              }
+              label {
+                user-select: none;
+                display: inline-block;
+                position: relative;
+                border-radius: 30px;
+                padding: 7px 35px;
+                border: 1px solid #6a7887;
+                font-size: 13px;
+                transition: 0.3s all ease;
+                cursor: pointer;
+                &::before,
+                &::after {
+                  content: '';
+                  position: absolute;
+                  width: 22px;
+                  height: 22px;
+                  border: 1px solid #6a7887;
+                  left: 5px;
+                  border-radius: 50%;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  background: #fff;
+                }
+                &::after {
+                  width: 4px;
+                  height: 11px;
+                  border-radius: 0;
+                  border: solid #3dc3ff;
+                  border-width: 0 2px 2px 0;
+                  -webkit-transform: translateY(-50%) rotate(45deg);
+                  transform: translateY(-50%) rotate(45deg);
+                  left: 14px;
+                  opacity: 0;
+                  transition: all 0.2s ease;
+                }
+                &:hover {
+                  background: #cbeefd;
+                  color: #007ab0;
+                  border: 1px solid #3dc3ff;
+                  &::before {
+                    border: 1px solid #3dc3ff;
+                  }
+                }
+              }
+            }
+          }
+          button {
+            margin: 50px 0 10px;
+          }
+        }
+      }
+      button {
+        background: $secondary-btn-color;
+        width: 100%;
+        border-radius: 6px;
+        font-size: rem(16);
+        color: #fff;
+        padding: 10px;
+        margin: 25px 0 10px;
+        & ~ p {
+          text-align: center;
+          margin: 5px 0;
+        }
+        &.disable {
+          opacity: 0.4;
+          cursor: not-allowed;
+        }
+      }
+      .signup-toaster {
+        img {
+          height: 13px;
+          margin-right: 10px;
+        }
+        @include flexbox();
+        @include align-items(center);
+        color: $error-alert;
+        font-size: rem(14);
+      }
+    }
+  }
+}
+
+// Responsive
+@media screen and (max-width: 767px) {
+  .overall-wrap.create-account {
+    header {
+      a {
+        img {
+          display: block;
+        }
+      }
+    }
+    .body-section {
+      padding-top: 80px;
+      .container-wrap {
+        max-width: 100%;
+        padding: 0 20px;
+      }
+    }
+  }
+}

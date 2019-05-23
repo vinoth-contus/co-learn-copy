@@ -1,0 +1,130 @@
+@import '../../assets/scss/mixin.scss';
+@import '../../assets/scss/variable.scss';
+
+.overall-wrap.end {
+  padding: 0 20px;
+}
+.body-section.practice-end {
+  padding-top: 50px;
+}
+
+.end-practice.title {
+  @include flexbox();
+  @include justify-content(space-between);
+  @include align-items(center);
+  p {
+    font-size: rem(16);
+  }
+  .flex {
+    img {
+      display: inline-block;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    .count-number {
+      width: 24px;
+      height: 24px;
+      @include border-radius(4px);
+      background-color: $cmyk-color;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 24px;
+      text-align: center;
+      font-size: rem(15);
+      color: #fff;
+      font-family: 'OpenSans-Bold';
+    }
+  }
+}
+.practice-end {
+  .practice-cotent {
+    margin-top: 70px;
+    .skill-title {
+      @include flexbox();
+      @include align-items(flex-start);
+      h2 {
+        font-size: rem(24);
+        color: #000;
+        margin: 0;
+        font-family: 'OpenSans-Bold';
+      }
+      > img {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        margin-right: 16px;
+      }
+    }
+    .category-title {
+      .category-bor {
+        &.total-points {
+          .points-field {
+            background-color: $cmyk-color;
+          }
+        }
+      }
+    }
+  }
+  .end-earn {
+    @include flexbox();
+    @include align-items(center);
+    img {
+      margin-right: 10px;
+    }
+  }
+  .earned-points,
+  .end-earn,
+  .acgeivements {
+    @include flexbox();
+    @include justify-content(space-between);
+    @include align-items(center);
+  }
+  .acgeivements {
+    > h5 {
+      color: #3dc3ff;
+      font-size: rem(17);
+      font-family: 'OpenSans-Bold';
+      margin-right: 16px;
+    }
+  }
+  .points-field {
+    padding: 8px 17px;
+    color: #fff;
+    background-color: $primary-btn-color;
+    font-family: 'OpenSans-SemiBold';
+    @include border-radius(4px);
+    font-size: rem(24);
+    text-align: center;
+  }
+  .medal-star {
+    @include flexbox();
+    @include justify-content(space-between);
+    border-bottom: 0 !important;
+    .achiev-btn {
+      background: transparent;
+      display: inline-flex;
+      width: 48.5%;
+      height: auto;
+      padding: 10px 5px;
+      @include border-radius(4px);
+      border: 1px solid #d5dde6;
+
+      img {
+        margin: 0 4px;
+        width: 18px;
+        height: auto;
+      }
+      span {
+        margin: 0 auto;
+      }
+    }
+  }
+  .page-bot-btn {
+    .redirect-btn {
+      &.grey {
+        background-color: $teritary-btn-color;
+        color: #6a7887;
+      }
+    }
+  }
+}

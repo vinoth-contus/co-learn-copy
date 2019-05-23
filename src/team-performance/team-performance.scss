@@ -1,0 +1,601 @@
+@import '../assets/scss/mixin.scss';
+@import '../assets/scss/variable.scss';
+.main-wrap-team-strength {
+  .no-data {
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+  }
+  .team-strength-progress {
+    width: 62px;
+    height: 62px;
+    .CircularProgressbar-trail {
+      stroke: #e2e7ee;
+    }
+    .CircularProgressbar-path {
+      stroke: #3cc3ff;
+    }
+    .CircularProgressbar-text {
+      fill: #6a7887;
+      font-size: rem(28);
+      font-family: 'OpenSans-Bold';
+    }
+  }
+  .show-all-label-text {
+    font-size: 14px;
+    padding-right: 8px;
+    padding-bottom: 2px;
+    font-weight: 600;
+    vertical-align: middle;
+    display: table-cell;
+  }
+  .show-all-label {
+    display: table;
+  }
+  .team-skills-wrap {
+    @include flexbox();
+    @include flex-wrap(wrap);
+    .team-strength-left {
+      min-height: 100vh;
+      @include flexbox();
+      @include flex-direction(column);
+      flex: 0 0 60%;
+      padding: 60px 60px 60px 135px;
+      border-right: 1px solid #ccc;
+      .month-dropdown {
+        margin: 20px 0;
+        display: none;
+        select {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          padding: 10px;
+          width: 80px;
+          font-size: rem(18);
+          background: url('../assets/images/downarrow.png') right 10px center
+            no-repeat;
+          background-size: 15px;
+          background-color: #f1f1f1;
+          font-size: 14px;
+          width: 100%;
+        }
+      }
+      .date-picker-slider-wrap {
+        @include flexbox();
+        @include justify-content(space-between);
+        > h2 {
+          color: #000;
+          font-size: rem(22);
+        }
+        .datepicker-claendar {
+          @include align-items(center);
+          > img {
+            width: 16px;
+            height: 16px;
+            margin-right: 0;
+          }
+          .select-dropper-wrap {
+            display: block;
+            li {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .sliderfor-team {
+      position: relative;
+      width: 100%;
+      height: auto;
+      margin: 60px 0 100px 0;
+      .slider-rail {
+        position: relative;
+        width: 100%;
+        height: 6px;
+        background-color: rgba(203, 212, 223, 0.4);
+        @include border-radius(4.5px);
+        .slider-pointer {
+          position: absolute;
+          width: 24px;
+          height: 24px;
+          @include border-radius(50%);
+          box-shadow: 0 2px 4px 0 rgba(106, 120, 135, 0.37);
+          border: solid 1px #c7d0db;
+          background-color: #fff;
+          top: 50%;
+          left: 37.5%;
+          -webkit-transform: translate(-50%, -50%);
+          transform: translateY(-50%, -50%);
+        }
+      }
+      .month {
+        @include flexbox();
+        position: absolute;
+        left: 0;
+        right: 0;
+        @include justify-content(space-around);
+        margin-top: 20px;
+      }
+      .slider-divider {
+        position: relative;
+        padding-left: 50px;
+        top: -100%;
+        @include transform(translateY(-50%));
+        &:before {
+          position: absolute;
+          width: 1px;
+          content: '';
+          height: 40px;
+          top: 50%;
+          background-color: #e6e6e6;
+        }
+        span {
+          padding-left: 20px;
+        }
+      }
+    }
+    .team-strength-wrap {
+      // border-bottom: 1px solid rgba(106, 120, 135, 0.2);
+      padding-bottom: 20px;
+      table {
+        width: 100%;
+        thead th {
+          width: 20%;
+          text-align: left;
+          text-transform: uppercase;
+          font-size: rem(16);
+
+          &:first-child {
+            width: 60%;
+          }
+        }
+        tbody tr {
+          &:first-child {
+            border-bottom: 1px solid rgba(106, 120, 135, 0.2);
+            cursor: auto;
+          }
+          cursor: pointer;
+          user-select: none;
+          width: 100%;
+          .content-loader {
+            height: 10px;
+            width: 50%;
+            overflow: hidden;
+            white-space: nowrap;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-name: placeHolderShimmer;
+            animation-timing-function: linear;
+            background: #dfdfdf;
+            background: linear-gradient(
+              to right,
+              #eeeeee 8%,
+              #dddddd 18%,
+              #eeeeee 33%
+            );
+          }
+          @keyframes placeHolderShimmer {
+            0% {
+              background-position: -468px 0;
+            }
+            100% {
+              background-position: 468px 0;
+            }
+          }
+          td {
+            vertical-align: middle;
+            padding: 15px 0;
+            color: #000;
+            font-size: rem(18);
+            div {
+              @include flexbox();
+              @include align-items(center);
+              span {
+                width: 42px;
+                height: 42px;
+                background-color: #3dc3ff;
+                @include flexbox();
+                @include justify-content(center);
+                @include align-items(center);
+                @include border-radius(50%);
+                position: relative;
+                &.team-user-loader {
+                  background: #dfdfdf;
+                }
+                img {
+                  width: 100%;
+                  height: 100%;
+                  position: absolute;
+                  &.saal-logo-table {
+                    width: 50%;
+                    height: 50%;
+                  }
+                }
+              }
+              .content-loader {
+                height: 10px;
+                margin-left: 10px;
+                width: 50%;
+                overflow: hidden;
+                white-space: nowrap;
+                animation-duration: 2s;
+                animation-fill-mode: forwards;
+                animation-iteration-count: infinite;
+                animation-name: placeHolderShimmer;
+                animation-timing-function: linear;
+                background: #dfdfdf;
+                background: linear-gradient(
+                  to right,
+                  #eeeeee 8%,
+                  #dddddd 18%,
+                  #eeeeee 33%
+                );
+              }
+              @keyframes placeHolderShimmer {
+                0% {
+                  background-position: -468px 0;
+                }
+                100% {
+                  background-position: 468px 0;
+                }
+              }
+              h2 {
+                font-size: rem(18);
+                margin-left: 10px;
+                color: #000;
+                font-family: 'OpenSans-Bold';
+                width: 50%;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+              }
+              span.percentage {
+                padding: 0 4px;
+                width: auto;
+                background-color: #feba74;
+                @include border-radius(4px);
+                text-transform: uppercase;
+                font-family: 'OpenSans-SemiBold';
+                color: #fff;
+                height: 30px;
+                margin-left: 10px;
+              }
+            }
+            .team-strength-progress {
+              width: 62px;
+              height: 62px;
+              .CircularProgressbar-trail {
+                stroke: #e2e7ee;
+              }
+              .CircularProgressbar-path {
+                stroke: #3cc3ff;
+              }
+              .CircularProgressbar-text {
+                fill: #6a7887;
+                font-size: rem(28);
+                font-family: 'OpenSans-Bold';
+              }
+            }
+            &:last-child {
+              text-align: center;
+            }
+          }
+        }
+      }
+      //Member Skill div structure
+      .member-skill {
+        @include flexbox();
+        @include flex-direction(column);
+        width: 100%;
+        height: auto;
+        position: relative;
+        .for-fixed-header {
+          @include flexbox();
+          @include flex-direction(column);
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-bottom: 1px solid #ccc;
+        }
+        .member-header,
+        .second-head-item {
+          @include flexbox();
+          width: 100%;
+          margin-bottom: 20px;
+          .mem-header-item {
+            @include flexbox();
+            flex: 1;
+            text-align: left;
+            text-transform: uppercase;
+            font-size: 1rem;
+            &:first-child {
+              flex: 0 0 60%;
+            }
+            p {
+              text-align: left;
+              text-transform: uppercase;
+              font-size: 1rem;
+              color: #6a7887;
+            }
+          }
+          p {
+            vertical-align: middle;
+            padding: 15px 0;
+            color: #000;
+            font-size: 1.125rem;
+          }
+        }
+      }
+      .second-head-item,
+      .body-content .second-head-item {
+        .team-heading {
+          @include flexbox();
+          @include align-items(center);
+          width: 100%;
+          flex: 1;
+          span {
+            width: 42px;
+            height: 42px;
+            background-color: #3dc3ff;
+            @include flexbox();
+            @include justify-content(center);
+            @include align-items(center);
+            @include border-radius(50%);
+            position: relative;
+            &.team-user-loader {
+              background: #dfdfdf;
+            }
+            img {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              &.saal-logo-table {
+                width: 50%;
+                height: 50%;
+              }
+            }
+          }
+          h2 {
+            font-size: 1.125rem;
+            margin-left: 10px;
+            color: #000;
+            font-family: 'OpenSans-Bold';
+            width: 50%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+          }
+          &:first-child {
+            flex: 0 0 60%;
+            max-width: 60%;
+          }
+        }
+      }
+      .body-content {
+        margin-top: 169px;
+        // height: 600px;
+        max-height: 600px;
+        overflow: auto;
+        &::-webkit-scrollbar {
+          width: 6px;
+          height: 6px;
+        }
+        &::-webkit-scrollbar-track {
+          border-radius: 10px;
+          background: rgba(0, 0, 0, 0.1);
+        }
+        &::-webkit-scrollbar-thumb {
+          border-radius: 10px;
+          background: rgba(0, 0, 0, 0.2);
+        }
+        &::-webkit-scrollbar-thumb:hover {
+          background: rgba(0, 0, 0, 0.4);
+        }
+        &::-webkit-scrollbar-thumb:active {
+          background: rgba(0, 0, 0, 0.9);
+        }
+        .second-header {
+          padding: 15px 0;
+          .second-head-item {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .grapher-collected-points {
+      @include flexbox();
+      @include flex-direction(column);
+      .downloadable-wrap {
+        padding: 45px 0;
+        width: 100%;
+        @include flexbox();
+        @include align-items(center);
+        > h2 {
+          font-size: rem(20);
+          color: #000;
+        }
+        @include justify-content(space-between);
+        @include flex-wrap(wrap);
+        .dropdowns-grapher {
+          @include flexbox();
+          @include align-items(Center);
+          .drop-ui {
+            box-shadow: 0 2px 4px 0 rgba(106, 120, 135, 0.2);
+            border: solid 1px rgba(106, 120, 135, 0.3);
+            background-color: #fff;
+            margin-right: 5px;
+            padding: 5px;
+            width: auto;
+            @include flexbox();
+            @include align-items(Center);
+            @include border-radius(4px);
+            button,
+            select {
+              font-size: rem(14);
+              font-family: 'OpenSans-Regular';
+            }
+
+            img {
+              width: 24px;
+              height: 18px;
+              margin-right: 5px;
+              &.calendar-grey {
+                width: 14px;
+                height: 16px;
+              }
+            }
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+      .line-chart {
+        width: 100%;
+        height: auto;
+        position: relative;
+        canvas {
+          max-width: 100%;
+        }
+      }
+    }
+    .team-strength-right {
+      padding: 60px 0;
+      flex: 1;
+      @include flexbox();
+      @include flex-direction(column);
+    }
+  }
+  .rc-slider-disabled {
+    background-color: #fff;
+  }
+  .rc-slider-disabled .rc-slider-rail {
+    background-color: rgba(203, 212, 223, 0.2);
+  }
+  .rc-slider-disabled .rc-slider-track {
+    background-color: transparent;
+  }
+  .rc-slider-rail {
+    background-color: rgba(203, 212, 223, 0.4);
+    height: 7px;
+  }
+  .rc-slider-disabled .rc-slider-mark-text {
+    color: #e2e7ee;
+  }
+  .rc-slider-disabled .rc-slider-handle {
+    background-color: #f7fafd;
+    border-color: #e2e7ee;
+  }
+  .rc-slider-handle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px 0 rgba(106, 120, 135, 0.37);
+    border: solid 1px #c7d0db;
+    background-color: #fff;
+    margin-left: -12px;
+    margin-top: -9px;
+    &:hover {
+      border-color: #c7d0db;
+    }
+    &:active {
+      box-shadow: none;
+      border-color: #c7d0db;
+    }
+    &:focus {
+      box-shadow: none;
+      border-color: #c7d0db;
+    }
+  }
+  .rc-slider-track {
+    background-color: transparent;
+  }
+  .rc-slider-mark-text {
+    color: #6a7887;
+    margin-top: 20px;
+    font-size: 14px;
+    // position: relative;
+    // &::after {
+    //   width: 1px;
+    //   content: '';
+    //   height: 40px;
+    //   top: -270%;
+    //   left: 250%;
+    //   background-color: #e6e6e6;
+    //   position: absolute;
+    // }
+  }
+  .rc-slider-mark-text-active {
+    color: #6a7887;
+  }
+  .rc-slider-dot {
+    display: none;
+    margin-left: -4px;
+  }
+  .rc-slider-dot-active {
+    border-color: transparent;
+  }
+  .rc-slider-handle-click-focused:focus {
+    border-color: #c7d0db;
+  }
+  // .slider-divider {
+  //   width: 1px;
+  //   content: '';
+  //   height: 40px;
+  //   top: 50%;
+  //   background-color: #e6e6e6;
+  //   position: absolute;
+  // }
+}
+
+@media screen and (max-width: 1200px) {
+  .main-wrap-team-strength {
+    .team-skills-wrap {
+      .team-strength-left {
+        // padding-right:30px;
+        // padding-left:30px;
+        flex: 0 0 100%;
+        border-right: 0;
+        // border-bottom: 1px solid #ccc;
+      }
+      .team-strength-right {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .overall-wrap.team-performance {
+    padding-bottom: 10px !important;
+    .main-wrap-team-strength {
+      padding: 10px 0 !important;
+      .team-skills-wrap {
+        .team-strength-left,
+        .second-header-nav {
+          padding: 100px 40px 0px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 420px) {
+  .overall-wrap.team-performance {
+    .main-wrap-team-strength {
+      .team-skills-wrap {
+        .team-strength-left {
+          padding: 100px 15px 0px;
+          .monthly-slider {
+            display: none;
+          }
+          .month-dropdown {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "saal-corporate-learning",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "chart.js": "^2.7.3",
+    "chartjs-plugin-annotation": "^0.5.7",
+    "mixpanel-browser": "^2.27.1",
+    "moment": "^2.24.0",
+    "node-sass": "^4.11.0",
+    "nw-react-slider": "^2.0.1",
+    "rc-slider": "^8.6.9",
+    "react": "^16.7.0",
+    "react-circular-progressbar": "^1.0.0",
+    "react-dom": "^16.7.0",
+    "react-fast-compare": "^2.0.4",
+    "react-ga": "^2.5.7",
+    "react-redux": "^6.0.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.8",
+    "react-simple-tooltip": "^2.5.0",
+    "react-switch": "^4.1.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "toastr": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

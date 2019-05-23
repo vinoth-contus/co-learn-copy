@@ -1,0 +1,271 @@
+.learn-box {
+  padding: 30px 0;
+  li {
+    background: #fff;
+    border: 1px solid #d5dde6;
+    border-radius: 4px;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 25px;
+    transition: 1s;
+    vertical-align: top;
+    .img-cont {
+      position: relative;
+      display: block;
+      cursor: pointer;
+      overflow: hidden;
+      min-height: 175px;
+      max-height: 175px;
+      background: #f1f1f1;
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: 5s;
+        min-height: 175px;
+        max-height: 175px;
+      }
+      i {
+        width: 20px;
+        height: 20px;
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: url('../assets/images/stars.png') no-repeat;
+        background-size: 100%;
+        display: none;
+        &:hover,
+        &.active {
+          background-position: 0 -25px;
+        }
+      }
+      .progress-bar {
+        height: 6px;
+        display: block;
+        position: absolute;
+        background: #1d2c3d;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        .progress-level {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          background: transparent;
+          display: block;
+          .progress-area {
+            position: absolute;
+            left: 0;
+            height: 6px;
+            background: #7ed321;
+          }
+        }
+      }
+
+      .completed {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 10px 15px;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.5);
+        em {
+          display: inline-block;
+          margin-right: 8px;
+          width: 20px;
+          height: 20px;
+          background: url('../assets/images/completed.png') no-repeat;
+          background-size: 100%;
+          vertical-align: middle;
+        }
+      }
+    }
+    .content-box {
+      padding: 15px;
+
+      .title {
+        color: #3dc3ff;
+        cursor: pointer;
+        margin: 15px 0;
+        display: block;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .content {
+        display: block;
+        color: #000;
+        font-size: 15px;
+        line-height: 20px;
+        min-height: 45px;
+        max-height: 45px;
+        overflow-y: auto;
+        margin-bottom: 10px;
+      }
+      .posted {
+        opacity: 0.5;
+      }
+    }
+
+    &:hover {
+      border: 3px solid #d5dde6;
+      box-shadow: 0 32px 37px -20px rgba(29, 44, 61, 0.26);
+      transform: scale(1.07);
+      .img-cont {
+        //img{transform: scale(1.2)}
+        i {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.tool-bar {
+  position: relative;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  .left-cont,
+  .right-cont {
+    display: inline-block;
+  }
+  .left-cont {
+    width: 30%;
+    position: relative;
+    padding: 0 10px 0 30px;
+    input {
+      border: 1px solid #fff;
+      padding: 8px 5px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: url('../assets/images/search.png') no-repeat;
+      background-size: 100%;
+      cursor: pointer;
+      position: absolute;
+      left: 0;
+      top: 9px;
+    }
+  }
+  .right-cont {
+    display: flex;
+    justify-content: space-between;
+    text-align: right;
+    width: 70%;
+    span {
+      display: inline-block;
+      strong {
+        font-weight: bold;
+        #learning_skills {
+          background-color: #f1f1f1 !important;
+          padding: 8px 30px 8px 8px;
+          background-size: 12px !important;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background: url('../assets/images/downarrow.png') right 10px center
+            no-repeat;
+        }
+        img {
+          display: inline-block;
+          margin-left: 10px;
+          vertical-align: middle;
+          height: 12px;
+          cursor: pointer;
+        }
+      }
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 599px) {
+  .learn-box {
+    li {
+      width: 48.5%;
+      margin: 0 3% 3% 0;
+      &:nth-child(2n + 2) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .learn-box {
+    li {
+      width: 31.3%;
+      margin: 0 3% 3% 0;
+      &:nth-child(2n + 2) {
+        margin-right: 3%;
+      }
+      &:nth-child(3n + 3) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .tool-bar {
+    flex-direction: column;
+    .left-cont {
+      width: 100%;
+    }
+    .right-cont {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .tool-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    .left-cont {
+      width: 45%;
+    }
+    .right-cont {
+      width: 100%;
+      justify-content: space-between;
+      span:last-child {
+        position: absolute;
+        top: 9px;
+        right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .tool-bar {
+    .right-cont {
+      margin-top: 15px;
+    }
+  }
+}
+
+@media screen and (min-width: 987px) {
+  .learn-box {
+    li {
+      width: 22.7%;
+      margin: 0 3% 3% 0;
+      &:nth-child(2n + 2),
+      &:nth-child(3n + 3) {
+        margin-right: 3%;
+      }
+      &:nth-child(4n + 4) {
+        margin-right: 0;
+      }
+    }
+  }
+}

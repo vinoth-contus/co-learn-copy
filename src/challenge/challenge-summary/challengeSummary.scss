@@ -1,0 +1,239 @@
+@import '../../assets/scss/mixin.scss';
+@import '../../assets/scss/variable.scss';
+
+.overall-wrap.challenge-summary {
+  padding: 0 20px 90px 20px;
+  .close-grey {
+    cursor: pointer;
+  }
+  .body-section {
+    padding: 100px 0 30px 0;
+    .container-wrap {
+      max-width: 70%;
+      h2 {
+        font-size: rem(22);
+        color: #000;
+        line-height: rem(26);
+        padding: 20px 0 25px;
+      }
+      .challenge-container {
+        border: 1px solid rgba(106, 120, 135, 0.2);
+        border-width: 1px 0px;
+        padding-top: 25px;
+        .question-wrapper {
+          position: relative;
+          padding: 3px 0 50px 45px;
+          .serial-no {
+            position: absolute;
+            left: 0;
+            .number {
+              width: 30px;
+              height: 30px;
+              background: #6a7887;
+              border-radius: 50%;
+              text-align: center;
+              color: #fff;
+              font: 15px/30px OpenSans-Bold;
+            }
+          }
+          .question-container {
+            @include flexbox();
+            @include justify-content(space-between);
+            padding-top: 3px;
+            .question {
+              max-width: 86%;
+              p {
+                font: 15px/23px OpenSans-Regular;
+                color: #000;
+                span {
+                  font: 15px/23px OpenSans-Regular;
+                  color: #000;
+                  display: none;
+                }
+              }
+              strong {
+                display: inline-block;
+                font: 15px/23px OpenSans-Bold;
+                color: #000;
+                margin: 20px 0 5px;
+              }
+              .your-answer {
+                color: #6a7887;
+              }
+              .justifications {
+                font: 15px/23px OpenSans-Regular;
+                color: $primary-btn-color;
+                text-decoration: underline;
+                margin-top: 15px;
+                display: block;
+                cursor: pointer;
+              }
+            }
+            .answer-sign {
+              display: inline-block;
+              width: 33px;
+              height: 33px;
+              background: url('../../assets/images/completed.png') no-repeat;
+              background-size: 100%;
+              vertical-align: middle;
+            }
+            .answer-sign.wrong {
+              background: url('../../assets/images/wrong.png') no-repeat;
+              background-size: 100%;
+            }
+          }
+          .review-wrapper {
+            @include flexbox();
+            @include justify-content(space-between);
+            @include align-items(center);
+            background: #f6f8fa;
+            border: 1px solid #d5dde6;
+            border-radius: 4px;
+            padding: 8px;
+            margin-top: 24px;
+            .review {
+              @include flexbox();
+              @include align-items(center);
+              .thumbnail {
+                position: relative;
+                border-radius: 2px;
+                margin-right: 8px;
+                min-width: 75px;
+                width: 75px;
+                height: 60px;
+                .eye {
+                  display: inline-block;
+                  background: url(/static/media/eye.87d1d3b3.svg) no-repeat;
+                  background-size: 100%;
+                  width: 22px;
+                  height: 20px;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                }
+                &::before {
+                  content: '';
+                  position: absolute;
+                  background-color: rgba(0, 0, 0, 0.5);
+                  width: 100%;
+                  height: 100%;
+                  border-radius: 2px;
+                }
+              }
+              .description {
+                p {
+                  color: #6a7887;
+                  font: 13px/23px OpenSans-Regular;
+                }
+                h3 {
+                  font: 15px/23px OpenSans-Bold;
+                  color: #000;
+                  padding-right: 10px;
+                }
+              }
+            }
+            .reading-list {
+              @include flexbox();
+              padding: 10px 15px;
+              width: 100%;
+              max-width: 240px;
+              border-radius: 4px;
+              border: solid 1px #d5dde6;
+              background-color: #ffffff;
+              img {
+                height: 20px;
+                margin-right: 17px;
+              }
+            }
+          }
+        }
+      }
+      .button-section {
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+        padding-top: 40px;
+        a,
+        button {
+          width: 100%;
+          border-radius: 6px;
+          padding: 10px 0;
+          color: #fff;
+          font-size: rem(18);
+          margin-top: 25px;
+        }
+        .green-button {
+          background-color: $secondary-btn-color;
+        }
+        .gray-button {
+          background-color: $teritary-btn-color;
+          color: #6a7887;
+        }
+      }
+    }
+  }
+}
+// responsive
+@media (max-width: 767px) {
+  .overall-wrap.challenge-summary {
+    .body-section {
+      padding: 30px 0 20px 0;
+      .container-wrap {
+        max-width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 560px) {
+  .overall-wrap.challenge-summary {
+    .body-section {
+      .container-wrap {
+        .challenge-container {
+          .question-wrapper {
+            .review-wrapper {
+              @include flex-direction(column);
+              .review {
+                width: 100%;
+              }
+              .reading-list {
+                max-width: 100%;
+                margin-top: 10px;
+              }
+            }
+          }
+          .button-section {
+            max-width: 100%;
+            padding-top: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 420px) {
+  .overall-wrap.challenge-summary {
+    .body-section {
+      .container-wrap {
+        .challenge-container {
+          .question-wrapper {
+            padding: 3px 0 30px 0px;
+            .serial-no {
+              display: none;
+            }
+            .question-container {
+              .question {
+                max-width: 92%;
+                p {
+                  span {
+                    display: inline;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,210 @@
+@import '../../assets/scss/mixin.scss';
+@import '../../assets/scss/variable.scss';
+
+.overall-wrap.reading-list-reviewed {
+  #timer_running {
+    cursor: not-allowed;
+  }
+
+  min-height: 100vh;
+  .reviewed-header {
+    width: 100%;
+    height: 320px;
+    background: no-repeat center;
+    background-size: cover;
+    position: relative;
+    padding: 26px 25px;
+    .for-blac-overlay {
+      width: 100%;
+      height: 100%;
+
+      background: rgba(0, 0, 0, 0.41);
+      background: -moz-linear-gradient(
+        top,
+        rgba(0, 0, 0, 0.616) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      background: -webkit-gradient(
+        left top,
+        left bottom,
+        color-stop(0%, rgba(0, 0, 0, 0.61)),
+        color-stop(100%, rgba(0, 0, 0, 0))
+      );
+      background: -webkit-linear-gradient(
+        top,
+        rgba(0, 0, 0, 0.61) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      background: -o-linear-gradient(
+        top,
+        rgba(0, 0, 0, 0.61) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      background: -ms-linear-gradient(
+        top,
+        rgba(0, 0, 0, 0.61) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.61) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=0 );
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    .hedaer-tool {
+      width: 100%;
+      @include flexbox();
+      @include justify-content(space-between);
+      @include align-items(center);
+      position: relative;
+      z-index: 1;
+      .reviewed-count-section,
+      .mark-reviewed-count {
+        @include flexbox();
+        @include align-items(center);
+        .reviewd-count-rate {
+          width: 36px;
+          height: 34px;
+          @include border-radius(5px);
+          background-color: $cmyk-color;
+          text-align: center;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          line-height: 34px;
+          color: #fff;
+          font-family: 'Opensans-SemiBold';
+          font-size: rem(24);
+          margin: 0 4px;
+        }
+        .reviewed-status {
+          background: rgba(255, 255, 255, 0.24);
+          padding: 7px 12px;
+          @include border-radius(5px);
+          border: 1px solid rgba(255, 255, 255, 0.34);
+          display: inline-block;
+          color: #fff;
+          font-family: 'Opensans-SemiBold';
+          > svg {
+            margin-left: 5px;
+          }
+          &.reviewed-active {
+            color: #6a7887;
+            background-color: #fff;
+            > svg g {
+              fill: #6a7887;
+            }
+          }
+        }
+        .info-icon {
+          height: 20px;
+          cursor: pointer;
+          position: relative;
+        }
+      }
+    }
+  }
+  //body-content
+  .reviewed-content-body-wrap {
+    width: 100%;
+    height: auto;
+    padding: 60px 0;
+    .reviewed-content-wrapper {
+      width: 100%;
+      max-width: 807px;
+      padding: 0 20px;
+      margin: 0 auto;
+      .reviewed-content-header {
+        border-bottom: 1px solid #e1e4e7;
+        padding-bottom: 20px;
+        .link-title {
+          font-size: rem(18);
+          color: #3dc3ff;
+          margin-bottom: 12px;
+        }
+        .main-title {
+          font-size: rem(32);
+          color: #000;
+          margin-bottom: 10px;
+        }
+        h6.minus {
+          font-family: 'Opensans-Light';
+          color: #b4bbc3 !important;
+          span {
+            color: #b4bbc3 !important;
+          }
+          .dynamic-minutes {
+            padding: 0 3px;
+          }
+        }
+      }
+      .readinglist-content {
+        div{
+          img{margin:0 auto;}
+        }
+        padding: 30px 0;
+        p {
+          font-size: rem(18);
+          line-height: 1.8rem;
+          padding-bottom: 20px;
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-size: rem(22);
+          font-family: 'Opensans-Bold';
+          padding: 25px 0;
+        }
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          font-size: rem(19);
+          padding: 20px 0;
+        }
+        h3 {
+          font-size: rem(17);
+        }
+        ul {
+          padding-left: 20px;
+          li {
+            list-style-type: circle;
+            padding: 5px 0;
+            font-size: rem(17);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .overall-wrap.reading-list-reviewed {
+    .reviewed-content-body-wrap {
+      .reviewed-content-wrapper {
+        max-width: 100%;
+        padding: 0 25px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .overall-wrap.reading-list-reviewed {
+    .reviewed-header {
+      padding: 26px 10px;
+    }
+    .info-wrap .tooltip .tootltip-wrap {
+      width: 220px;
+    }
+  }
+}

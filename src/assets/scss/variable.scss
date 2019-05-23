@@ -1,0 +1,27 @@
+/**********typo******************/
+
+$baseFontSize: 16px;
+@function rem($pixels, $context: $baseFontSize) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @return $pixels / $context * 1rem;
+}
+
+//Color theme
+$primary-btn-color: #3dc3ff;
+$secondary-btn-color: #99d55b;
+$teritary-btn-color: #e2e9f1;
+//small-btn's color
+$cmyk-color: #50e3c2;
+//Question option section
+$question-wrap: #61799e;
+$question-option: #495d7c;
+$question-option-border: #405071;
+$question-option-active: #273346;
+$question-option-activeborder: #405071;
+
+$error-alert: #fd5089;

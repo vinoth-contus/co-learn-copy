@@ -1,0 +1,9 @@
+.git
+# .env.*
+.gitignore
+.dockerignore
+.editorconfig
+
+node_modules/
+build/
+Dockerfile

@@ -1,0 +1,21 @@
+@import '../node_modules/toastr/build/toastr.min.css';
+
+body {
+  font-family: 'OpenSans-Regular';
+}
+.toast-message {
+  color: #fff;
+}
+
+/* Change the white to any color ;) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px #fff inset !important;
+  -webkit-box-shadow: 0 0 0 30px #fff inset !important;
+}
+.progress-bar-wrap .hgTEDg {
+  bottom: 35% !important;
+  left: 80% !important;
+}

@@ -1,0 +1,267 @@
+@import '../../assets/scss/mixin.scss';
+@import '../../assets/scss/variable.scss';
+
+.overall-wrap {
+  header {
+    width: 100%;
+    height: 80px;
+    z-index: 2;
+    background-color: #61799e;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+    padding: 0 40px;
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(space-between);
+    position: relative;
+  }
+  header {
+    img.saal-logo {
+      width: 33px;
+      max-width: 100%;
+    }
+    nav {
+      height: 100%;
+      @include flexbox();
+      @include justify-content(center);
+      @include align-items(center);
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      ul,
+      li {
+        @include flexbox();
+        height: 100%;
+        @include justify-content(center);
+        @include align-items(center);
+        position: relative;
+        a {
+          padding: 0 30px;
+          height: 100%;
+          @include flexbox();
+          @include align-items(center);
+          img {
+            filter: invert(0%);
+          }
+          &.active {
+            color: #fff;
+            border-bottom: 2px solid #3dc3ff;
+            img {
+              filter: invert(0%);
+            }
+          }
+        }
+        a,
+        span {
+          @include flexbox();
+          color: rgba(255, 255, 255, 0.5);
+          font-size: rem(17);
+          font-family: 'OpenSans-SemiBold';
+          img {
+            width: auto;
+            filter: invert(15%);
+            padding-right: 20px;
+            &.logout-white {
+              width: auto;
+              height: 17px;
+            }
+          }
+          &:hover {
+            color: #fff;
+            img {
+              filter: invert(0%);
+            }
+          }
+        }
+        ul.profile-dropper {
+          position: absolute;
+          top: 100%;
+          left: auto;
+          right: auto;
+          background-color: #fff;
+          width: 80%;
+          height: auto;
+          transform: translateY(40px);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+          opacity: 0;
+          @include border-radius(3px);
+          visibility: hidden;
+          margin-top: 1px;
+          li {
+            width: 100%;
+            padding: 10px 0;
+            cursor: pointer;
+            img {
+              width: auto;
+              height: 17px;
+              filter: invert(0%);
+              padding-right: 10px;
+            }
+            span {
+              color: #4b4b4b;
+            }
+          }
+        }
+        &.home-profile:hover ul.profile-dropper {
+          transform: translateY(0px);
+          transition: 0.3s ease;
+          opacity: 1;
+          visibility: visible;
+        }
+        &.logout-web {
+          display: none;
+        }
+      }
+      ul {
+        padding: 0;
+        li {
+          margin-right: 15px;
+          &:nth-last-child(2),
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    .hamburger {
+      display: none;
+      position: absolute;
+      right: 40px;
+      margin-top: 3px;
+      span {
+        width: 22px;
+        height: 2px;
+        background-color: #fff;
+        margin-bottom: 3px;
+        display: block;
+      }
+    }
+    .close-app {
+      position: fixed;
+      background: #5e749b;
+      opacity: 0;
+      visibility: hidden;
+      width: 100%;
+      left: 0;
+      top: 0;
+      height: 70px;
+      padding-left: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .overall-wrap {
+    header {
+      nav {
+        ul {
+          li {
+            margin-right: 0;
+            a {
+              padding: 0 20px;
+              font-size: rem(16);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .overall-wrap {
+    header {
+      box-shadow: none;
+      background-color: #61799e;
+      position: fixed;
+      > a img {
+        display: none;
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        opacity: 0;
+        visibility: visible;
+        z-index: 1;
+        left: 0;
+        max-height: 100%;
+        overflow: auto;
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          from(#657fa2),
+          to(#4a5688)
+        );
+        background: linear-gradient(to bottom, #657fa2, #4a5688);
+        width: 100%;
+        left: -100%;
+        ul {
+          height: 100%;
+          padding-top: 80px;
+          display: block;
+          width: 100%;
+          padding-top: 70px;
+          li {
+            display: block;
+            height: auto;
+            border-bottom: 0;
+
+            a,
+            span {
+              color: rgba(255, 255, 255, 0.5);
+              &.active,
+              &:hover,
+              &:active {
+                background-color: #566c8e;
+                color: #fff !important;
+                border-bottom: 0;
+              }
+            }
+
+            a,
+            span {
+              padding: 25px 15px 25px 40px;
+              @include flexbox();
+              @include align-items(center);
+              img {
+                padding-right: 35px;
+              }
+            }
+            .profile-dropper {
+              padding: 0;
+              background-color: transparent;
+              transform: translateY(0px);
+              li {
+                padding: 12px 80px;
+                margin-top: 2px;
+                cursor: pointer;
+              }
+            }
+            &.logout-web {
+              display: block;
+            }
+            &.home-profile:hover ul.profile-dropper {
+              opacity: 0;
+              visibility: hidden;
+            }
+          }
+        }
+      }
+      .hamburger {
+        display: block;
+      }
+      &.nav-open {
+        nav {
+          left: 0%;
+          opacity: 1;
+          visibility: visible;
+        }
+        .close-app {
+          opacity: 1;
+          visibility: visible;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
